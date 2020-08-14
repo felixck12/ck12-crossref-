@@ -3,16 +3,15 @@ import requests
 import csv
 import re
 import six
-import requests_cache
-
-#requests_cache.install_cache
-#requests_cache.clear()
 
 
+#Libraries listed above must be installed prior to program use
 
-#xhtml = source.json()["response"]["artifact"]["xhtml"]
-#print (xhtml)
+
+#receiving user input
 artifact_id_input = input("Enter an Artifact ID, a list of Artifact IDs, or 'b' to choose a branch ")
+
+#for the input of a branch
 if 'b' in artifact_id_input:
 	branch_input = input("Enter the desired branch (ex: biology, chemistry): ")
 		
@@ -208,6 +207,7 @@ def scrape(input_index):
 
 #csv file initiation
 #main code
+#csv file creation and content
 lst0  = scrape(0)
 run_times = lst0[9]
 with open('crossreflinks_word.csv', 'w', newline='') as csvfile:
